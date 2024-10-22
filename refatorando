@@ -1,0 +1,35 @@
+#include <stdio.h>	
+#include <stdlib.h>	
+#include <string.h> //biblioteca para comparação de string comando "strcmp" e "strcpy"
+#include <locale.h> //biblioteca responsavel para utilizar acentos 
+
+struct cadastro_novo_usuario{
+	char nome[50];
+	char sobrenome[50];
+	char placa_carro[8];
+	char cpf[15];
+	char email[50];
+	char telefone[17];
+	
+};
+
+typedef struct cadastro_novo_usuario cadastro;
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+		
+
+ 
+ 
+	printf("+===================================================================+\n\n");
+	printf("|                                                                   |\n");
+	printf("\t\t\tALINHA FACIL\n\n");
+	printf("|                                                                   |\n");	
+	printf("+===================================================================+\n\n");
+
+
+
+return 0;
+	
+}
+
