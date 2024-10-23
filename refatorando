@@ -3,7 +3,27 @@
 #include <string.h> //biblioteca para comparação de string comando "strcmp" e "strcpy"
 #include <locale.h> //biblioteca responsavel para utilizar acentos 
 
+
+
+//crio uma struct para armazernar as escolhas do usuario.
+struct escolhausuario{
+	char cadastoulogin;
+	int qntdd_de_user_cadastrar;
+	
+	
+};
+
+
+// crio uma struct a qual ira armazernar os dados do novo usuario criado.
 struct cadastro_novo_usuario{
+	char iduserLogin[50];
+	char iduserSenha[50];
+	char nomeuser[20];
+};
+
+
+// crio uma struct para armazernar os dados de cadastro de um novo cliente PF.
+struct cadastro_novo_cliente{
 	char nome[50];
 	char sobrenome[50];
 	char placa_carro[8];
@@ -13,22 +33,90 @@ struct cadastro_novo_usuario{
 	
 };
 
-typedef struct cadastro_novo_usuario cadastro;
+//utilizo os typedef para atribuir apelidos para as struct, (?tipo como se fosse um ponteiro?), Perguntar ao Prof. Marcos
+typedef struct escolhausuario escolhausuario;
+typedef struct cadastro_novo_usuario cadastro_novo_usuario;
 
 int main(){
 	setlocale(LC_ALL, "Portuguese");
-		
 
- 
- 
-	printf("+===================================================================+\n\n");
-	printf("|                                                                   |\n");
-	printf("\t\t\tALINHA FACIL\n\n");
-	printf("|                                                                   |\n");	
-	printf("+===================================================================+\n\n");
+	//intruduzindo  o apelido a um tipo de variavel para utilizar scanf
+	escolhausuario escolha_usuario;
+	cadastro_novo_usuario cadastronovouser;
+	
+ 	//apenas uma "interface" para deixar o terminal um pouco mais bnt
+	printf("+============================================================================+\n\n");
+	printf("\t\t\t\tALINHA FACIL\n\n");
+	printf("+============================================================================+\n\n");
+	
+	
+	//inicio o  principal laço de repetição do programa
+	do{
+	
+	
+	//peço ao usuario para escolhar uma opção e salvo a sua escolha
+	printf("\n\t\t\tEscolha uma das opções!\n\n\n");
+	printf("\n1 - Para Logar | 2 - Para cadastrar | 3 - Sair do Programa\n\n\n$");
+	scanf(" %c", &escolha_usuario.cadastoulogin);
+	
+	//comando usado para nao ter problema em lixo de memoria nos proximos scanf
+	fflush(stdin);
 
+	switch(escolha_usuario.cadastoulogin){
+	
+		case '1':
+			
+			//comando para limpar a tela do terminal
+			system("cls");
+			
+			//apos a limpeza do terminal, imprimo na tela novamente essa "interface" para deixar o programa mais bnt
+			printf("+===================================================================+\n\n");
+			printf("\t\t\tALINHA FACIL\n\n");
+			printf("+===================================================================+\n\n");
+			
+			printf("\nDigite Seu Nome:\n\n$");
+			scanf(" %s", &cadastronovouser.nomeuser);
+			fflush(stdin);
+			
+			
+			//peço ao usuario para digitar seu login e salvo para realizar a comporação
+			printf("\nDigite Seu Login:\n\n$");
+			scanf(" %s", &cadastronovouser.iduserLogin);
+			fflush(stdin);
+			
+			//peço ao usuario para digitar sua senha e salvo para realizar a comparação
+			printf("\nDigite Seu Senha:\n\n$");
+			scanf(" %s", &cadastronovouser.iduserSenha);
+			fflush(stdin);
+			
+			continue;
+			
+		case '2':
+			
+			//comando para limpar a tela do terminal
+			system("cls");
+			
+			//apos a limpeza do terminal, imprimo na tela novamente essa "interface" para deixar o programa mais bnt
+			printf("+===================================================================+\n\n");
+			printf("\t\t\tALINHA FACIL\n\n");
+			printf("+===================================================================+\n\n");
+			
+			//peço ao usuario para digitar seu login e salvo para realizar a comporação
+			printf("\nDigite Seu Login:\n\n$");
+			scanf(" %s", &cadastronovouser.iduserLogin);
+			fflush(stdin);
+			
+			//peço ao usuario para digitar sua senha e salvo para realizar a comparação
+			printf("\nDigite Seu Senha:\n\n$");
+			scanf(" %s", &cadastronovouser.iduserSenha);
+			fflush(stdin);
+			
+			break;
 
+}
+}while(1);
 
+printf("Bem vindo %s", cadastronovouser.nomeuser);
 return 0;
 	
 }
