@@ -41,7 +41,8 @@ int main() {
 	// declaro uma variável do tipo inteiro para verificar se já houve usuário 
 	int usuariosCadastrados = 0;
 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+
+// Comando para adicionar cor as saídas como printf	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
 	
 	// apenas uma "interface" para deixar o terminal mais bnt
 	printf("+============================================================================+\n\n");
@@ -77,7 +78,7 @@ int main() {
 				printf("+===================================================================+\n\n");
 				printf("\n\t\t\tTELA DE LOGIN\n\n");
 				
-				if (!usuariosCadastrados) {
+				if (usuariosCadastrados == 0) {
 					printf("\nNenhum usuário encontrado. Realize o cadastro primeiro!\n");
 				} else {
 					// peço ao usuário para digitar seu login e salvo para realizar a comparação
@@ -139,6 +140,10 @@ int main() {
 				break;
 		}
 	} while (strcmp(&loginuser.escolhauser, "1") == 1 ); 
+
+
+  printf("Login Realizado com sucesso!\n);
+  printf("Bem Vindo %s", usuário.nomruser);
 	
 	return 0;
 }
