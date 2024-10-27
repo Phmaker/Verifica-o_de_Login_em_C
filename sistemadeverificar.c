@@ -23,7 +23,7 @@ struct cadastro_novo_cliente {
 	char telefone[17];	
 };
 
-//utilizo os typedef para atribuir apelidos para as struct, (?tipo como se fosse um ponteiro?), Perguntar ao Prof. Marcos
+//utilizo os typedef para atribuir apelidos para as struct
 typedef struct sistemaloginuser sistemaloginuser;
 
 int main() {
